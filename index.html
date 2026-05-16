@@ -7,90 +7,210 @@
 
   <style>
 
-    body {
-      margin: 0;
-      background: #0b0b0b;
-      color: white;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
       font-family: Arial, sans-serif;
-      text-align: center;
+      background:#070707;
+      color:white;
+      overflow-x:hidden;
     }
 
-    header {
-      padding: 40px;
-      background: linear-gradient(90deg, #111, #1c1c1c);
-      border-bottom: 3px solid #00ffcc;
+    /* Hintergrund Glow */
+
+    .background-glow{
+      position:fixed;
+      width:600px;
+      height:600px;
+      background:#00ffcc22;
+      border-radius:50%;
+      filter:blur(120px);
+      top:-200px;
+      right:-200px;
+      z-index:-1;
     }
 
-    h1 {
-      margin: 0;
-      font-size: 60px;
-      color: #00ffcc;
+    /* Header */
+
+    header{
+      padding:40px 10%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border-bottom:1px solid #222;
+      background:#0d0d0d;
     }
 
-    .subtitle {
-      color: #aaa;
-      margin-top: 10px;
-      font-size: 18px;
+    .logo{
+      font-size:40px;
+      font-weight:bold;
+      color:#00ffcc;
+      letter-spacing:2px;
     }
 
-    .game-container {
-      max-width: 900px;
-      margin: 50px auto;
-      background: #161616;
-      border-radius: 20px;
-      padding: 30px;
-      box-shadow: 0 0 30px rgba(0,255,200,0.2);
+    .nav{
+      color:#888;
+      font-size:18px;
     }
 
-    .game-image {
-      width: 100%;
-      border-radius: 15px;
-      margin-bottom: 25px;
+    /* Hero */
+
+    .hero{
+      text-align:center;
+      padding:100px 20px 60px;
     }
 
-    h2 {
-      font-size: 40px;
-      color: #f1c40f;
+    .hero h1{
+      font-size:80px;
+      margin-bottom:20px;
+      color:white;
     }
 
-    .description {
-      font-size: 18px;
-      color: #ddd;
-      line-height: 1.7;
-      margin-top: 20px;
+    .hero p{
+      color:#aaa;
+      font-size:22px;
+      max-width:800px;
+      margin:auto;
+      line-height:1.7;
     }
 
-    .features {
-      margin-top: 30px;
-      text-align: left;
-      display: inline-block;
-      font-size: 18px;
-      line-height: 2;
+    /* Game Card */
+
+    .game-card{
+      width:90%;
+      max-width:1100px;
+      margin:60px auto;
+      background:rgba(20,20,20,0.85);
+      border:1px solid #222;
+      border-radius:30px;
+      overflow:hidden;
+      backdrop-filter:blur(10px);
+      box-shadow:0 0 40px rgba(0,255,200,0.08);
+      transition:0.3s;
     }
 
-    .download-btn {
-      display: inline-block;
-      margin-top: 40px;
-      padding: 18px 40px;
-      background: #00ffcc;
-      color: black;
-      font-size: 22px;
-      font-weight: bold;
-      border-radius: 15px;
-      text-decoration: none;
-      transition: 0.3s;
+    .game-card:hover{
+      transform:translateY(-5px);
+      box-shadow:0 0 60px rgba(0,255,200,0.15);
     }
 
-    .download-btn:hover {
-      background: white;
-      transform: scale(1.05);
+    .banner{
+      width:100%;
+      height:350px;
+      object-fit:cover;
+      background:#111;
     }
 
-    footer {
-      margin-top: 60px;
-      padding: 20px;
-      color: #777;
-      font-size: 14px;
+    .content{
+      padding:40px;
+    }
+
+    .game-title{
+      font-size:50px;
+      color:#f1c40f;
+      margin-bottom:20px;
+    }
+
+    .description{
+      color:#ccc;
+      font-size:20px;
+      line-height:1.8;
+    }
+
+    /* Features */
+
+    .features{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+      margin-top:40px;
+    }
+
+    .feature-box{
+      background:#111;
+      border:1px solid #222;
+      border-radius:20px;
+      padding:25px;
+      transition:0.3s;
+    }
+
+    .feature-box:hover{
+      border-color:#00ffcc;
+      transform:scale(1.03);
+    }
+
+    .feature-box h3{
+      margin-bottom:10px;
+      color:#00ffcc;
+    }
+
+    .feature-box p{
+      color:#999;
+      line-height:1.5;
+    }
+
+    /* Download Button */
+
+    .download{
+      text-align:center;
+      margin-top:50px;
+    }
+
+    .download a{
+      display:inline-block;
+      padding:20px 50px;
+      background:#00ffcc;
+      color:black;
+      font-size:24px;
+      font-weight:bold;
+      border-radius:18px;
+      text-decoration:none;
+      transition:0.3s;
+      box-shadow:0 0 30px rgba(0,255,200,0.3);
+    }
+
+    .download a:hover{
+      transform:scale(1.05);
+      background:white;
+    }
+
+    /* Footer */
+
+    footer{
+      margin-top:100px;
+      padding:30px;
+      text-align:center;
+      color:#666;
+      border-top:1px solid #222;
+      background:#0d0d0d;
+    }
+
+    /* Mobile */
+
+    @media(max-width:800px){
+
+      .hero h1{
+        font-size:50px;
+      }
+
+      .game-title{
+        font-size:35px;
+      }
+
+      .hero p,
+      .description{
+        font-size:18px;
+      }
+
+      header{
+        flex-direction:column;
+        gap:10px;
+      }
+
     }
 
   </style>
@@ -98,45 +218,89 @@
 
 <body>
 
+  <div class="background-glow"></div>
+
   <header>
-    <h1>Funny Industries</h1>
-    <div class="subtitle">
-      Indie Games • Python Projects • Online Casino Simulator
+
+    <div class="logo">
+      Funny Industries
     </div>
+
+    <div class="nav">
+      Indie Games • Dark Modern Experience
+    </div>
+
   </header>
 
-  <div class="game-container">
+  <section class="hero">
 
-    <h2>🎰 ORBI Casino</h2>
+    <h1>ORBI CASINO</h1>
 
-    <p class="description">
+    <p>
       ORBI Casino ist ein modernes Casino-Simulator-Spiel mit Online-System,
       Accounts, Freundesliste, Jackpot-Events und Cloud-Synchronisation.
       Spiele alleine oder mit Freunden, sammle Credits und versuche den
       großen Jackpot zu gewinnen.
     </p>
 
-    <div class="features">
-      👥 Online Accounts<br>
-      ☁️ Cloud Sync<br>
-      💰 Riesige Jackpots<br>
-      ⚡ Live Events<br>
-      🎮 Auto Spin System<br>
-      🏆 Loyalitäts-System<br>
-      🤝 Freundesliste & Geld senden
+  </section>
+
+  <div class="game-card">
+
+    <img class="banner"
+    src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1600&auto=format&fit=crop">
+
+    <div class="content">
+
+      <div class="game-title">
+        🎰 ORBI Casino
+      </div>
+
+      <div class="description">
+        Tauche ein in die Welt von ORBI Casino.
+        Spiele mit Freunden, sammle riesige Gewinne,
+        nutze das Loyalitäts-System und erlebe
+        ein stylisches modernes Casino mit Online-Features.
+      </div>
+
+      <div class="features">
+
+        <div class="feature-box">
+          <h3>☁️ Cloud Sync</h3>
+          <p>Deine Daten werden online gespeichert und synchronisiert.</p>
+        </div>
+
+        <div class="feature-box">
+          <h3>💰 Riesige Jackpots</h3>
+          <p>Gewinne riesige Summen und knacke den globalen Jackpot.</p>
+        </div>
+
+        <div class="feature-box">
+          <h3>👥 Freunde-System</h3>
+          <p>Füge Freunde hinzu und sende ihnen Credits.</p>
+        </div>
+
+        <div class="feature-box">
+          <h3>⚡ Live Events</h3>
+          <p>Erlebe spezielle Events und Bonus-Multiplikatoren.</p>
+        </div>
+
+      </div>
+
+      <div class="download">
+
+        <a href="Casino-By%20Funny%20Industries.exe">
+          DOWNLOAD
+        </a>
+
+      </div>
+
     </div>
-
-    <br>
-
-    <a class="download-btn"
-       href="Casino-By%20Funny%20Industries.exe">
-       DOWNLOAD
-    </a>
 
   </div>
 
   <footer>
-    © 2026 Funny Industries — All Rights Reserved
+    Funny Industries © 2026
   </footer>
 
 </body>
