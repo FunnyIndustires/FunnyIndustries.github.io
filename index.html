@@ -2,67 +2,142 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Funny Industries</title>
 
   <style>
+
     body {
-      background-color: #111;
+      margin: 0;
+      background: #0b0b0b;
       color: white;
       font-family: Arial, sans-serif;
       text-align: center;
+    }
+
+    header {
       padding: 40px;
+      background: linear-gradient(90deg, #111, #1c1c1c);
+      border-bottom: 3px solid #00ffcc;
     }
 
     h1 {
+      margin: 0;
+      font-size: 60px;
       color: #00ffcc;
-      font-size: 50px;
     }
 
-    .game-box {
-      background: #222;
-      width: 350px;
-      margin: 30px auto;
-      padding: 20px;
-      border-radius: 15px;
+    .subtitle {
+      color: #aaa;
+      margin-top: 10px;
+      font-size: 18px;
     }
 
-    img {
+    .game-container {
+      max-width: 900px;
+      margin: 50px auto;
+      background: #161616;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 0 30px rgba(0,255,200,0.2);
+    }
+
+    .game-image {
       width: 100%;
-      border-radius: 10px;
+      border-radius: 15px;
+      margin-bottom: 25px;
     }
 
-    a {
+    h2 {
+      font-size: 40px;
+      color: #f1c40f;
+    }
+
+    .description {
+      font-size: 18px;
+      color: #ddd;
+      line-height: 1.7;
+      margin-top: 20px;
+    }
+
+    .features {
+      margin-top: 30px;
+      text-align: left;
       display: inline-block;
-      margin-top: 15px;
-      padding: 10px 20px;
+      font-size: 18px;
+      line-height: 2;
+    }
+
+    .download-btn {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 18px 40px;
       background: #00ffcc;
       color: black;
-      text-decoration: none;
-      border-radius: 10px;
+      font-size: 22px;
       font-weight: bold;
+      border-radius: 15px;
+      text-decoration: none;
+      transition: 0.3s;
     }
 
-    a:hover {
+    .download-btn:hover {
       background: white;
+      transform: scale(1.05);
     }
+
+    footer {
+      margin-top: 60px;
+      padding: 20px;
+      color: #777;
+      font-size: 14px;
+    }
+
   </style>
 </head>
 
 <body>
 
-  <h1>Funny Industries</h1>
+  <header>
+    <h1>Funny Industries</h1>
+    <div class="subtitle">
+      Indie Games • Python Projects • Online Casino Simulator
+    </div>
+  </header>
 
-  <p>Willkommen auf unserer offiziellen Game-Seite!</p>
+  <div class="game-container">
 
-  <div class="game-box">
+    <h2>🎰 ORBI Casino</h2>
 
-    <h2>Orbi Casino</h2>
+    <p class="description">
+      ORBI Casino ist ein modernes Casino-Simulator-Spiel mit Online-System,
+      Accounts, Freundesliste, Jackpot-Events und Cloud-Synchronisation.
+      Spiele alleine oder mit Freunden, sammle Credits und versuche den
+      großen Jackpot zu gewinnen.
+    </p>
 
-    <p>ORBI Casino ist ein modernes Casino-Simulator-Spiel mit Online-System, Accounts, Freundesliste, Jackpot-Events und Cloud-Synchronisation. Spiele alleine oder mit Freunden, sammle Credits und versuche den großen Jackpot zu gewinnen.</p>
+    <div class="features">
+      👥 Online Accounts<br>
+      ☁️ Cloud Sync<br>
+      💰 Riesige Jackpots<br>
+      ⚡ Live Events<br>
+      🎮 Auto Spin System<br>
+      🏆 Loyalitäts-System<br>
+      🤝 Freundesliste & Geld senden
+    </div>
 
-    <a href="Casino-By%20Funny%20Industries.exe">Download</a>
+    <br>
+
+    <a class="download-btn"
+       href="Casino-By%20Funny%20Industries.exe">
+       DOWNLOAD
+    </a>
 
   </div>
+
+  <footer>
+    © 2026 Funny Industries — All Rights Reserved
+  </footer>
 
 </body>
 </html>
